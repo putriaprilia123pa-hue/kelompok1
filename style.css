@@ -1,0 +1,266 @@
+/* ======================================================= */
+/* THEME BARU - MODERN & CLEAN (COREUI INSPIRED)  */
+/* ======================================================= */
+
+/* 1. SKEMA WARNA & VARIABEL DASAR */
+:root {
+    --primary-color: #321fdb;
+    --primary-color-light: rgba(50, 31, 219, 0.1);
+    --bg-sidebar: #303c54;
+    --bg-content: #f0f2f5;
+    --bg-card: #ffffff;
+    --text-dark: #212631;
+    --text-light: #e9edf2;
+    --text-muted: #6c757d;
+    --success: #2eb85c;
+    --warning: #f9b115;
+    --danger: #e55353;
+    --border-color: #d8dbe0;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    --border-radius: 0.5rem; /* 8px */
+}
+
+/* 2. STYLE DASAR & GLOBAL */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+    background-color: var(--bg-content);
+    font-size: 16px;
+}
+
+body {
+    color: var(--text-dark);
+    display: flex;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* 3. SIDEBAR */
+.sidebar {
+    width: 250px;
+    background-color: var(--bg-sidebar);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar-header {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header span {
+    font-size: 0.7em;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-menu li a {
+    display: flex; /* Menggunakan flexbox untuk ikon */
+    align-items: center;
+    gap: 15px; /* Jarak antara ikon dan teks */
+    padding: 0.8rem 1.5rem;
+    color: var(--text-light);
+    border-left: 4px solid transparent;
+    transition: background-color 0.2s, border-left 0.2s;
+    font-weight: 500;
+}
+
+.sidebar-menu li a .fa-fw {
+    width: 1.25em; /* Menyamakan lebar ikon */
+}
+
+.sidebar-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-menu li.active a {
+    background-color: rgba(50, 31, 219, 0.2);
+    border-left: 4px solid var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    padding: 1.25rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-footer a { color: var(--text-muted); }
+
+/* 4. AREA KONTEN UTAMA */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.top-nav {
+    background-color: var(--bg-card);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.user-profile { display: flex; align-items: center; cursor: pointer; }
+.user-profile img { width: 40px; height: 40px; border-radius: 50%; margin-left: 10px; }
+
+.content { padding: 1.5rem; }
+.content-header { font-size: 1.8em; margin-bottom: 1.5rem; font-weight: 600; }
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.card-header h3 { margin: 0; font-size: 1.2rem; }
+
+/* 5. KOMPONEN (TOMBOL, TABEL, STATUS) */
+.btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.85; }
+
+.btn-primary { background-color: var(--primary-color); }
+.btn-success { background-color: var(--success); }
+.btn-warning { background-color: var(--warning); color: var(--text-dark); }
+.btn-danger { background-color: var(--danger); }
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.data-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.data-table tbody tr:hover { background-color: #f8f9fa; }
+.action-buttons a { margin-right: 5px; }
+
+.status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: capitalize;
+}
+.status-publish, .status-active { background-color: var(--success); }
+.status-draft, .status-closed { background-color: var(--warning); color: var(--text-dark); }
+
+/* 6. DASHBOARD & KARTU STATISTIK */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.card-stat {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+.card-stat-icon {
+    font-size: 2em;
+    margin-right: 1.5rem;
+    padding: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+}
+.fa-newspaper { color: var(--primary-color); background-color: #eaf5fc; }
+.fa-check-circle { color: var(--success); background-color: #eafaf1; }
+.fa-pencil-alt { color: var(--warning); background-color: #fef8e7; }
+.card-stat-info p { margin: 0; color: var(--text-muted); font-size: 1rem; }
+.card-stat-info h3 { margin: 5px 0 0 0; font-size: 2em; }
+.chart-container { position: relative; height: 350px; width: 100%; }
+
+/* 7. MODAL */
+.modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); animation: fadeIn 0.3s; }
+.modal-content { background-color: var(--bg-card); margin: 8% auto; border-radius: var(--border-radius); width: 80%; max-width: 500px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: slideIn 0.3s; border: 1px solid var(--border-color); }
+.modal-header { padding: 1rem 1.5rem; background-color: var(--primary-color); color: white; display: flex; justify-content: space-between; align-items: center; border-top-left-radius: var(--border-radius); border-top-right-radius: var(--border-radius); }
+.modal-header h2 { margin: 0; font-size: 1.2em; }
+.close-button { color: white; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.2s; }
+.close-button:hover { color: rgba(255,255,255,0.7); }
+.modal-body { padding: 1.5rem; }
+.modal-form-group { margin-bottom: 1rem; }
+.modal-form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+.modal-form-group input, .modal-form-group select { width: 95%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1em; }
+.modal-footer { padding: 1rem 1.5rem; background-color: #f8f9fa; text-align: right; border-bottom-left-radius: var(--border-radius); border-bottom-right-radius: var(--border-radius); border-top: 1px solid var(--border-color); }
+.modal-footer .btn { margin-left: 10px; }
+
+/* 8. RESPONSIVE */
+@media (max-width: 768px) {
+    .sidebar { position: fixed; left: 0; top: 0; height: 100%; z-index: 1000; transform: translateX(-100%); }
+    .sidebar.show { transform: translateX(0); }
+    .menu-toggle { display: block; }
+}
+
+@keyframes fadeIn { from {opacity: 0} to {opacity: 1} }
+@keyframes slideIn { from {transform: translateY(-50px); opacity: 0} to {transform: translateY(0); opacity: 1} }

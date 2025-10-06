@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP ADMIN - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">CP ADMIN <span>0.1</span></div>
+        <ul class="sidebar-menu">
+            <li class="active"><a href="index.html"><i class="fas fa-tachometer-alt fa-fw"></i> Dashboard</a></li>
+            <li><a href="berita.html"><i class="fas fa-newspaper fa-fw"></i> Berita</a></li>
+            <li><a href="Trending.html"><i class="fas fa-poll fa-fw"></i> Trending</a></li>
+        </ul>
+        <div class="sidebar-footer"><a href="#">Logout</a></div>
+    </aside>
+
+    <div class="main-content">
+        <nav class="top-nav">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <div class="user-profile"><span>Ilmu Web</span><img src="pplg.jpeg" alt="User Avatar"></div>
+        </nav>
+
+        <main id="page-dashboard" class="content">
+            <h1 class="content-header">Dashboard</h1>
+            <div class="stats-cards">
+                <div class="card-stat">
+                    <div class="card-stat-icon"><i class="fas fa-newspaper"></i></div>
+                    <div class="card-stat-info"><p>Total Berita</p><h3 id="total-berita">0</h3></div>
+                </div>
+                <div class="card-stat">
+                    <div class="card-stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="card-stat-info"><p>Berita Terpublish</p><h3 id="berita-publish">0</h3></div>
+                </div>
+                <div class="card-stat">
+                    <div class="card-stat-icon"><i class="fas fa-pencil-alt"></i></div>
+                    <div class="card-stat-info"><p>Berita d</p><h3 id="berita-draft">0</h3></div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Statistik Status Berita</h3>
+                <div class="chart-container"><canvas id="statusChart"></canvas></div>
+            </div>
+        </main>
+    </div>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h2 id="modal-title"></h2><span class="close-button" onclick="closeModal()">&times;</span></div>
+            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-footer" id="modal-footer"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
